@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "B8jhx5H6iMuawu8CXHi7ViVGm41Gl9KIDT3/8g+FSvhesObdVwsEkF6RrAj21wGComp9v+f3NHulRecONQEl+w==",
+  "success": true,
+  "projectFilePath": "/home/lucasdev/Documentos/workspace-dotnet/api-v1-dotNetFlix/api-v1-dotNetFlix.csproj",
+  "expectedPackageFiles": [
+    "/home/lucasdev/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/home/lucasdev/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/home/lucasdev/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "/home/lucasdev/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "/home/lucasdev/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "/home/lucasdev/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
