@@ -42,5 +42,32 @@ namespace api_v1_dotNetFlix.Controllers
              
          }
 
+         [HttpPut("{id}")]
+         public IActionResult AtualizaFilme(int id, [FromBody] Filme filmeNovo){
+            var filme = _context.Filmes.Find(id);
+            if(filme == null){
+                return NotFound();    
+            }
+            //esse trecho pode ser mudado por um dto
+            filme.Titulo = filmeNovo.Titulo;
+            filme.Genero = filmeNovo.Genero;
+            filme.Duracao = filmeNovo.Duracao;
+            filme.Diretor = filmeNovo.Diretor;
+            _context.SaveChanges();
+            return NoContent();
+         }
+
+         [HttpDelete("{id}")]
+         public IActionResult DeletaFilme(int id){
+             var filme = _context.Filmes.Find(id);
+            if(filme == null){
+                return NotFound();    
+            }
+            _context.Remove(id);
+            _context.SaveChanges();
+            return NoContent();
+
+         }
+
     }
 }
