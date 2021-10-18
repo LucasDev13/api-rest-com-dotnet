@@ -22,5 +22,17 @@ namespace api_v1_dotNetFlix.Controllers
          public IEnumerable<Filme> RecuperarFilmes(){
              return filmes;
          }
+
+         [HttpGet("{id}")]
+         public Filme RecuperaFilmesPorId(int id){
+             foreach(Filme filme in filmes){
+                 if(filme.Id == id){
+                    return filme;
+                 }
+             }
+             return null;
+             
+         }
+
     }
 }
