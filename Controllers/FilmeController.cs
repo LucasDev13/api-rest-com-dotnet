@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using api_v1_dotNetFlix.Models;
 using api_v1_dotNetFlix.Data;
 using api_v1_dotNetFlix.Data.Dtos;
+using AutoMapper;
 
 namespace api_v1_dotNetFlix.Controllers
 {
@@ -12,9 +13,11 @@ namespace api_v1_dotNetFlix.Controllers
     public class FilmeController : ControllerBase{
         
         private FilmeContext _context;
+        private IMapper _mapper;
 
-        public FilmeController(FilmeContext context){
+        public FilmeController(FilmeContext context, IMapper mapper){
             _context = context;
+            _mapper = mapper;
         }
 
 
@@ -22,12 +25,7 @@ namespace api_v1_dotNetFlix.Controllers
          public IActionResult AdicionaFilme([FromBody] CreateFilmeDto filmeDto){
             
             //Criação de um objeto com um construtor implícito.
-            Filme filme = new Filme{
-                Titulo = filmeDto.Titulo,
-                Genero = filmeDto.Genero,
-                Duracao = filmeDto.Duracao,
-                Diretor = filmeDto.Diretor  
-            };
+            Filme filme = _mapper.Map<Filme>(filmeDto);
             //adiciona um filme ao contexto.
             _context.Filmes.Add(filme);
             //salva os dados no banco.
@@ -44,7 +42,8 @@ namespace api_v1_dotNetFlix.Controllers
          public IActionResult RecuperaFilmesPorId(int id){
             var filme = _context.Filmes.Find(id);
             if(filme != null){
-                return Ok(filme);      
+                ReadFilmeDto filmeDto = _mapper.Map<ReadFilmeDto>(filme);
+                return Ok(filmeDto);      
             }             
              //retorna 404-notfound
              return NotFound();
@@ -52,16 +51,13 @@ namespace api_v1_dotNetFlix.Controllers
          }
 
          [HttpPut("{id}")]
-         public IActionResult AtualizaFilme(int id, [FromBody] Filme filmeNovo){
+         public IActionResult AtualizaFilme(int id, [FromBody] UpdateFilmeDto updateFilmeDto){
             var filme = _context.Filmes.Find(id);
             if(filme == null){
                 return NotFound();    
             }
             //esse trecho pode ser mudado por um dto
-            filme.Titulo = filmeNovo.Titulo;
-            filme.Genero = filmeNovo.Genero;
-            filme.Duracao = filmeNovo.Duracao;
-            filme.Diretor = filmeNovo.Diretor;
+            _mapper.Map(updateFilmeDto, filme);
             _context.SaveChanges();
             return NoContent();
          }

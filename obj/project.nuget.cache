@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "UKTtGvRkmXiZDqXZR+28RtmGSMs22BxUrl3edYRqNQ1pcgwNzP277+pbUeGavCPtPzjJsUrCO5+CVk5mUjO4mg==",
+  "dgSpecHash": "T+O1sLcHGWVSw333Su0LzxQH5Se43WrBLcb17g5kAoHQjaCSpeaJEZESkLIp/iYQp4n04e3hdeOgKSI/U9k/uQ==",
   "success": true,
   "projectFilePath": "/home/lucasdev/Documentos/workspace-dotnet/api-v1-dotNetFlix/api-v1-dotNetFlix.csproj",
   "expectedPackageFiles": [
+    "/home/lucasdev/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
+    "/home/lucasdev/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.1/automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "/home/lucasdev/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/lucasdev/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/lucasdev/.nuget/packages/microsoft.entityframeworkcore/5.0.5/microsoft.entityframeworkcore.5.0.5.nupkg.sha512",
@@ -104,7 +106,7 @@
     "/home/lucasdev/.nuget/packages/system.net.sockets/4.3.0/system.net.sockets.4.3.0.nupkg.sha512",
     "/home/lucasdev/.nuget/packages/system.objectmodel/4.3.0/system.objectmodel.4.3.0.nupkg.sha512",
     "/home/lucasdev/.nuget/packages/system.reflection/4.3.0/system.reflection.4.3.0.nupkg.sha512",
-    "/home/lucasdev/.nuget/packages/system.reflection.emit/4.3.0/system.reflection.emit.4.3.0.nupkg.sha512",
+    "/home/lucasdev/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512",
     "/home/lucasdev/.nuget/packages/system.reflection.emit.ilgeneration/4.3.0/system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "/home/lucasdev/.nuget/packages/system.reflection.emit.lightweight/4.3.0/system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
     "/home/lucasdev/.nuget/packages/system.reflection.extensions/4.3.0/system.reflection.extensions.4.3.0.nupkg.sha512",
