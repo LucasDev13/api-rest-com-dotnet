@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using api_v1_dotNetFlix.Models;
 using api_v1_dotNetFlix.Data;
+using api_v1_dotNetFlix.Data.Dtos;
 
 namespace api_v1_dotNetFlix.Controllers
 {
@@ -18,8 +19,16 @@ namespace api_v1_dotNetFlix.Controllers
 
 
          [HttpPost]
-         public IActionResult AdicionaFilme([FromBody] Filme filme){
-             //adiciona um filme ao contexto.
+         public IActionResult AdicionaFilme([FromBody] CreateFilmeDto filmeDto){
+            
+            //Criação de um objeto com um construtor implícito.
+            Filme filme = new Filme{
+                Titulo = filmeDto.Titulo,
+                Genero = filmeDto.Genero,
+                Duracao = filmeDto.Duracao,
+                Diretor = filmeDto.Diretor  
+            };
+            //adiciona um filme ao contexto.
             _context.Filmes.Add(filme);
             //salva os dados no banco.
             _context.SaveChanges();
